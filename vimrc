@@ -80,6 +80,7 @@ set clipboard=unnamed
 set nocompatible
 set directory=$HOME/.vim/backup
 set expandtab
+set shiftwidth=2
 set tabstop=2
 set whichwrap=b,s,h,l,<,>,[,]
 set ruler
