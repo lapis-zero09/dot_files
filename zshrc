@@ -178,6 +178,7 @@ PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/Users/KonoSh
 
 export PATH="/usr/local/bin":$PATH
 
+export PATH="/usr/local/texlive/2015/bin/x86_64-darwin/":$PATH
 export PATH="$HOME/.pyenv/shims:$PATH"
 export XDG_CONFIG_HOME=~/.config
 
