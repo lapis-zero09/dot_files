@@ -41,7 +41,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'kana/vim-smartinput'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'andviro/flake8-vim'
-NeoBundle 'bps/vim-textobj-python'
+" NeoBundle 'bps/vim-textobj-python'
 
 NeoBundle 'hachibeeDI/python_hl_lvar.vim'
 NeoBundle 'scrooloose/nerdtree'
