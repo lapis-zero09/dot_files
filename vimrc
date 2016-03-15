@@ -44,11 +44,19 @@ NeoBundle 'andviro/flake8-vim'
 NeoBundle 'jmcantrell/vim-virtualenv'
 NeoBundle 'hachibeeDI/python_hl_lvar.vim'
 NeoBundle 'hynek/vim-python-pep8-indent'
+
+NeoBundle 'hail2u/vim-css3-syntax'
+" NeoBundle 'taichouchou2/html5.vim'
+NeoBundle 'hokaccha/vim-html5validator'
+NeoBundle 'tell-k/vim-browsereload-mac'
+NeoBundle 'tyru/caw.vim.git'
+
+
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tomtom/tcomment_vim'
+" NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
@@ -61,6 +69,9 @@ filetype plugin indent on
 
 NeoBundleCheck
 set shell=/bin/bash
+
+noremap <C-j> <esc>
+noremap! <C-j> <esc>
 
 syntax enable
 set background=dark
@@ -96,6 +107,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 set list
 set listchars=tab:▸\ ,eol:¬
 
+"""""""""""""""""""""""""""""""""""
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=reverse ctermfg=DarkGray gui=reverse guifg=DarkGray
 endfunction
@@ -187,3 +199,9 @@ if has("autocmd")
     \   exe "normal! g'\"" |
     \ endif
 endif
+
+"""""""""""""""""""""""""""""""
+" コメントアウト設定
+"""""""""""""""""""""""""""""""
+nmap <C-k> <Plug>(caw:i:toggle)
+vmap <C-k> <Plug>(caw:i:toggle)
