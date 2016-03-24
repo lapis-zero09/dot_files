@@ -163,11 +163,12 @@ case ${OSTYPE} in
         alias ls='ls -F --color=auto'
         ;;
 esac
-
+########################################
 if [[ -s ~/.nvm/nvm.sh ]];
  then source ~/.nvm/nvm.sh
 fi
-# eval "$(rbenv init -)"
+# rbenv
+eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
@@ -175,11 +176,20 @@ PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/Users/KonoSh
 
 export PATH="/usr/local/bin":$PATH
 
+# tex
 export PATH="/usr/local/texlive/2015/bin/x86_64-darwin/":$PATH
-export PATH="$HOME/.pyenv/shims:$PATH"
+
+# nvim
 export XDG_CONFIG_HOME=~/.config
 
+# pyenv, virtualenv
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
+# tmux-session
 function is_tmux_runnning() { [ ! -z "$TMUX" ]; }
 function tmux_automatically_attach_session()
 {if is_tmux_runnning; then
