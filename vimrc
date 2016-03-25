@@ -51,6 +51,7 @@ NeoBundle 'hokaccha/vim-html5validator'
 NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'tyru/caw.vim.git'
 
+NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'

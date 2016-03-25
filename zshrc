@@ -189,6 +189,10 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# pylearn2
+export PYLEARN2_DATA_PATH=~/Documents/projects/illust_deep
+export PATH=$PATH:~/Documents/projects/illust_deep/pylearn2/pylearn2/scripts
+
 # tmux-session
 function is_tmux_runnning() { [ ! -z "$TMUX" ]; }
 function tmux_automatically_attach_session()
