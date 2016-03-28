@@ -191,7 +191,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # pylearn2
 export PYLEARN2_DATA_PATH=~/Documents/projects/illust_deep
-export PATH=$PATH:~/Documents/projects/illust_deep/pylearn2/pylearn2/scripts
+export PATH="$HOME/Documents/projects/illust_deep/pylearn2/pylearn2/scripts/":$PATH
 
 # tmux-session
 function is_tmux_runnning() { [ ! -z "$TMUX" ]; }

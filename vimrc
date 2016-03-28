@@ -42,7 +42,7 @@ NeoBundle 'kana/vim-smartinput'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'andviro/flake8-vim'
 NeoBundle 'jmcantrell/vim-virtualenv'
-NeoBundle 'hachibeeDI/python_hl_lvar.vim'
+" NeoBundle 'hachibeeDI/python_hl_lvar.vim'
 NeoBundle 'hynek/vim-python-pep8-indent'
 
 NeoBundle 'hail2u/vim-css3-syntax'
