@@ -63,6 +63,12 @@ NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomasr/molokai'
+
+" rsense
+NeoBundle 'NigoroJr/rsense'
+NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', {
+    \ 'autoload' : { 'insert' : 1, 'filetype' : 'ruby', } }
+
 call neobundle#end()
 
 " Required:
@@ -206,3 +212,13 @@ endif
 """""""""""""""""""""""""""""""
 nmap <C-k> <Plug>(caw:i:toggle)
 vmap <C-k> <Plug>(caw:i:toggle)
+
+
+" rsense補完の設定
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+
+let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
+
+let g:rsenseUseOmniFunc = 1
