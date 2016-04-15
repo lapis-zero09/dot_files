@@ -66,8 +66,13 @@ NeoBundle 'tomasr/molokai'
 
 " rsense
 NeoBundle 'NigoroJr/rsense'
+<<<<<<< HEAD
 NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', {
     \ 'autoload' : { 'insert' : 1, 'filetype' : 'ruby', } }
+=======
+" NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', {
+    " \ 'autoload' : { 'insert' : 1, 'filetype' : 'ruby', } }
+>>>>>>> fix
 
 call neobundle#end()
 
