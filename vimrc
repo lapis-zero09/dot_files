@@ -57,7 +57,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-endwise'
-" NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
@@ -75,7 +75,7 @@ call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
-set shell=/bin/bash
+" set shell=/bin/bash
 
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
@@ -83,6 +83,7 @@ noremap! <C-j> <esc>
 syntax enable
 set background=dark
 colorscheme molokai
+set t_Co=256
 
 set cmdheight=2
 set showcmd
@@ -210,8 +211,8 @@ endif
 """""""""""""""""""""""""""""""
 " コメントアウト設定
 """""""""""""""""""""""""""""""
-nmap <C-k> <Plug>(caw:i:toggle)
-vmap <C-k> <Plug>(caw:i:toggle)
+" nmap <C-k> <Plug>(caw:i:toggle)
+" vmap <C-k> <Plug>(caw:i:toggle)
 
 
 " rsense補完の設定
@@ -222,3 +223,33 @@ endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 
 let g:rsenseUseOmniFunc = 1
+
+"""""""""""""""""""""""""""""""
+" tcommentで使用する形式を追加
+"""""""""""""""""""""""""""""""
+if !exists('g:tcomment_types')
+  let g:tcomment_types = {}
+endif
+let g:tcomment_types = {
+      \'php_surround' : "<?php %s ?>",
+      \'eruby_surround' : "<%% %s %%>",
+      \'eruby_surround_minus' : "<%% %s -%%>",
+      \'eruby_surround_equality' : "<%%= %s %%>",
+\}
+
+" マッピングを追加
+function! SetErubyMapping2()
+  nmap <buffer> <C-_>c :TCommentAs eruby_surround<CR>
+  nmap <buffer> <C-_>- :TCommentAs eruby_surround_minus<CR>
+  nmap <buffer> <C-_>= :TCommentAs eruby_surround_equality<CR>
+
+  vmap <buffer> <C-_>c :TCommentAs eruby_surround<CR>
+  vmap <buffer> <C-_>- :TCommentAs eruby_surround_minus<CR>
+  vmap <buffer> <C-_>= :TCommentAs eruby_surround_equality<CR>
+endfunction
+
+" erubyのときだけ設定を追加
+au FileType eruby call SetErubyMapping2()
+" phpのときだけ設定を追加
+au FileType php nmap <buffer><C-_>c :TCommentAs php_surround<CR>
+au FileType php vmap <buffer><C-_>c :TCommentAs php_surround<CR>
