@@ -171,6 +171,7 @@ fi
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
 
 PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/Users/KonoShinsaku/.rbenv/shims:/Users/KonoShinsaku/.rbenv/bin:/Users/KonoShinsaku/.rbenv/shims:/Users/KonoShinsaku/.rbenv/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/KonoShinsaku/.rvm/bin
 
