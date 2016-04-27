@@ -241,7 +241,8 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 "ヤンクの履歴
 nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,uf :<C-u>Unite file<CR>
+nnoremap <silent> ,ubf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 " 最近使ったファイルの一覧とバッファを表示
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
