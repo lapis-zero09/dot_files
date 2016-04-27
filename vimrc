@@ -64,6 +64,8 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'tomasr/molokai'
 
+NeoBundle 'tpope/vim-rails'
+
 " rsense
 NeoBundle 'NigoroJr/rsense'
 " NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', {
@@ -126,29 +128,7 @@ if has('syntax')
   augroup END
   call ZenkakuSpace()
 endif
-
-" 入力モードで開始する
-let g:unite_enable_start_insert=1
-" バッファ一覧
-noremap <C-P> :Unite buffer<CR>
-" ファイル一覧
-noremap <C-N> :Unite -buffer-name=file file<CR>
-" 最近使ったファイルの一覧
-noremap <C-Z> :Unite file_mru<CR>
-" sourcesを「今開いているファイルのディレクトリ」とする
-noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
-" ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-" ESCキーを2回押すと終了する
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-""""""""""""""""""""""""""""""
-
-
+"""""""""""""""""""""""""""""""""""""""""""
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -208,12 +188,6 @@ if has("autocmd")
     \ endif
 endif
 
-"""""""""""""""""""""""""""""""
-" コメントアウト設定
-"""""""""""""""""""""""""""""""
-" nmap <C-k> <Plug>(caw:i:toggle)
-" vmap <C-k> <Plug>(caw:i:toggle)
-
 
 " rsense補完の設定
 if !exists('g:neocomplete#force_omni_input_patterns')
@@ -253,3 +227,57 @@ au FileType eruby call SetErubyMapping2()
 " phpのときだけ設定を追加
 au FileType php nmap <buffer><C-_>c :TCommentAs php_surround<CR>
 au FileType php vmap <buffer><C-_>c :TCommentAs php_surround<CR>
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""
+"" unite
+" 入力モードで開始する
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+"NERDTreeを開く
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+"ヤンクの履歴
+nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+" 最近使ったファイルの一覧とバッファを表示
+nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+" ファイル非同期検索
+nnoremap <silent> ,up  :<C-u>Unite file_rec/async:!<CR>
+" ウィンドウを分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+" ウィンドウを縦に分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+" ESCキーを2回押すと終了する
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+"
+" vinarise
+let g:vinarise_enable_auto_detect = 1
+
+" unite-build map
+nnoremap <silent> ,vb :Unite build<CR>
+nnoremap <silent> ,vcb :Unite build:!<CR>
+nnoremap <silent> ,vch :UniteBuildClearHighlight<CR>
+
+"" unite-grep
+let g:unite_source_grep_command = 'ag'
+let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+let g:unite_source_grep_recursive_opt = ''
+let g:unite_source_grep_max_candidates = 200
+
+" unite-grepのキーマップ
+" 選択した文字列をunite-grep
+" https://github.com/shingokatsushima/dotfiles/blob/master/.vimrc
+vnoremap /g y:Unite grep::-iHRn:<C-R>=escape(@", '\\.*$^[]')<CR><CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+

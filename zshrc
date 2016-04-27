@@ -119,6 +119,12 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
+alias gch='git checkout'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gp='git push origin'
+
 alias la='ls -a'
 alias ll='ls -l'
 
