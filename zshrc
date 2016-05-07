@@ -123,7 +123,10 @@ alias gch='git checkout'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
-alias gp='git push origin'
+alias gps='git push origin'
+alias gp='git pull'
+
+
 
 alias la='ls -a'
 alias ll='ls -l'
