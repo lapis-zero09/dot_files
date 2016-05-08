@@ -125,7 +125,7 @@ alias gb='git branch'
 alias gc='git commit'
 alias gps='git push origin'
 alias gp='git pull'
-
+alias gm='git merge'
 
 
 alias la='ls -a'
