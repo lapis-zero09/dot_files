@@ -216,3 +216,10 @@ function tmux_automatically_attach_session()
         echo "${fg_bold[red]} |_|  \_\_|\__,_|\___|_|\___/|_|  |_|_| |_| |_|\___| ${reset_color}"
 fi}
 tmux_automatically_attach_session
+
+
+
+# go
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
