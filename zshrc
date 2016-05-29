@@ -158,6 +158,11 @@ elif which putclip >/dev/null 2>&1 ; then
 fi
 
 
+# brew path
+
+alias brew="env PATH=${PATH/\/Users\/KonoShinsaku\/\.pyenv\/shims:/} brew"
+
+export PATH="/usr/local/sbin:$PATH"
 
 ########################################
 # OS 別の設定
@@ -187,7 +192,7 @@ PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/Users/KonoSh
 export PATH="/usr/local/bin":$PATH
 
 # tex
-export PATH="/usr/local/texlive/2015/bin/x86_64-darwin/":$PATH
+export PATH="/usr/local/texlive/2015/bin/x86_64-darwin":$PATH
 
 # nvim
 export XDG_CONFIG_HOME=~/.config
@@ -201,7 +206,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # pylearn2
 export PYLEARN2_DATA_PATH=~/Documents/projects/illust_deep
-export PATH="$HOME/Documents/projects/illust_deep/pylearn2/pylearn2/scripts/":$PATH
+export PATH="$HOME/Documents/projects/illust_deep/pylearn2/pylearn2/scripts":$PATH
 
 # tmux-session
 function is_tmux_runnning() { [ ! -z "$TMUX" ]; }
