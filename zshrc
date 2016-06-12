@@ -227,3 +227,7 @@ tmux_automatically_attach_session
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+
+# tensorflow 3.5
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/tensorflow-0.9.0rc0-py3-none-any.whl
