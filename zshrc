@@ -231,3 +231,10 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # tensorflow 3.5
 export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/tensorflow-0.9.0rc0-py3-none-any.whl
+
+# lesspipe & source highlight
+export LESS='-R'
+
+LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
+export LESSOPEN
+LESS_ADVANCED_PREPROCESSOR=1; export LESS_ADVANCED_PREPROCESSOR
