@@ -178,9 +178,6 @@ case ${OSTYPE} in
         ;;
 esac
 ########################################
-if [[ -s ~/.nvm/nvm.sh ]];
- then source ~/.nvm/nvm.sh
-fi
 # rbenv
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -192,7 +189,8 @@ PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/Users/KonoSh
 export PATH="/usr/local/bin":$PATH
 
 # tex
-export PATH="/usr/local/texlive/2015/bin/x86_64-darwin":$PATH
+# export PATH="/usr/local/texlive/2015/bin/x86_64-darwin":$PATH
+export PATH="/usr/local/texlive/2016/bin/x86_64-darwin":$PATH
 
 # nvim
 export XDG_CONFIG_HOME=~/.config
@@ -239,3 +237,16 @@ LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
 export LESSOPEN
 LESS_ADVANCED_PREPROCESSOR=1; export LESS_ADVANCED_PREPROCESSOR
 export PATH="/usr/local/sbin:$PATH"
+
+
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# learnyounode
+alias lyn='learnyounode'
+alias lv='lyn verify'
+
+
+export PATH=$(cat /etc/paths | xargs | tr " " :)
+# or just hardcode your path like this
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
