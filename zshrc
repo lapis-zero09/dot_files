@@ -247,6 +247,6 @@ alias lyn='learnyounode'
 alias lv='lyn verify'
 
 
-export PATH=$(cat /etc/paths | xargs | tr " " :)
+# export PATH=$(cat /etc/paths | xargs | tr " " :)
 # or just hardcode your path like this
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+# export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
