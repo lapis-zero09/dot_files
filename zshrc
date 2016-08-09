@@ -202,6 +202,10 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+
 # pylearn2
 export PYLEARN2_DATA_PATH=~/Documents/projects/illust_deep
 export PATH="$HOME/Documents/projects/illust_deep/pylearn2/pylearn2/scripts":$PATH
@@ -247,6 +251,14 @@ alias lyn='learnyounode'
 alias lv='lyn verify'
 
 
+# john the ripper
+# export PATH="/Users/KonoShinsaku/.john-1.8.0-jumbo-1/run":$PATH
+
 # export PATH=$(cat /etc/paths | xargs | tr " " :)
 # or just hardcode your path like this
 # export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+#
+
+
+alias pass='sudo ruby /opt/pass/pass.rb'
+
