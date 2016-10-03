@@ -158,9 +158,6 @@ elif which putclip >/dev/null 2>&1 ; then
 fi
 
 
-# brew path
-
-alias brew="env PATH=${PATH/\/Users\/KonoShinsaku\/\.pyenv\/shims:/} brew"
 
 export PATH="/usr/local/sbin:$PATH"
 
@@ -195,20 +192,12 @@ export PATH="/usr/local/texlive/2016/bin/x86_64-darwin":$PATH
 # nvim
 export XDG_CONFIG_HOME=~/.config
 
-# pyenv, virtualenv
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# export PYENV_ROOT=/usr/local/var/pyenv
+# pyenv
+export PYENV_ROOT=/usr/local/var/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
-
-# pylearn2
-export PYLEARN2_DATA_PATH=~/Documents/projects/illust_deep
-export PATH="$HOME/Documents/projects/illust_deep/pylearn2/pylearn2/scripts":$PATH
 
 # tmux-session
 function is_tmux_runnning() { [ ! -z "$TMUX" ]; }
@@ -252,8 +241,6 @@ alias lv='lyn verify'
 
 
 # john the ripper
-# export PATH="/Users/KonoShinsaku/.john-1.8.0-jumbo-1/run":$PATH
-
 # export PATH=$(cat /etc/paths | xargs | tr " " :)
 # or just hardcode your path like this
 # export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
@@ -261,4 +248,3 @@ alias lv='lyn verify'
 
 
 alias pass='sudo ruby /opt/pass/pass.rb'
-
