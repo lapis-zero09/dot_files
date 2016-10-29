@@ -197,6 +197,7 @@ export PYENV_ROOT=/usr/local/var/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+alias activate="source $PYENV_ROOT/versions/anaconda3-4.1.1/bin/activate"
 
 
 # tmux-session
