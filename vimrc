@@ -86,7 +86,7 @@ syntax enable
 set background=dark
 colorscheme molokai
 set t_Co=256
-
+set backspace=2
 set cmdheight=2
 set showcmd
 set laststatus=2

@@ -241,11 +241,10 @@ alias lyn='learnyounode'
 alias lv='lyn verify'
 
 
-# john the ripper
-# export PATH=$(cat /etc/paths | xargs | tr " " :)
-# or just hardcode your path like this
-# export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
-#
-
-
 alias pass='sudo ruby /opt/pass/pass.rb'
+
+PATH="/Users/KonoShinsaku/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/KonoShinsaku/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/KonoShinsaku/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/KonoShinsaku/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/KonoShinsaku/perl5"; export PERL_MM_OPT;
