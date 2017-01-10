@@ -221,24 +221,8 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 
-# tensorflow 3.5
-export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/tensorflow-0.9.0rc0-py3-none-any.whl
-
-# lesspipe & source highlight
-export LESS='-R'
-
-LESSOPEN="|/usr/local/bin/lesspipe.sh %s"
-export LESSOPEN
-LESS_ADVANCED_PREPROCESSOR=1; export LESS_ADVANCED_PREPROCESSOR
-export PATH="/usr/local/sbin:$PATH"
-
-
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-# learnyounode
-alias lyn='learnyounode'
-alias lv='lyn verify'
 
 
 alias pass='sudo ruby /opt/pass/pass.rb'
