@@ -77,7 +77,6 @@ call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
-" set shell=/bin/bash
 
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
