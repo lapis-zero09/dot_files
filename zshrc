@@ -176,12 +176,12 @@ case ${OSTYPE} in
 esac
 ########################################
 # rbenv
-eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH="$HOME/.gem/ruby/2.2.0/bin:$PATH"
+# export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
 
-PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/Users/KonoShinsaku/.rbenv/shims:/Users/KonoShinsaku/.rbenv/bin:/Users/KonoShinsaku/.rbenv/shims:/Users/KonoShinsaku/.rbenv/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/KonoShinsaku/.rvm/bin
+# PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/Users/KonoShinsaku/.rbenv/shims:/Users/KonoShinsaku/.rbenv/bin:/Users/KonoShinsaku/.rbenv/shims:/Users/KonoShinsaku/.rbenv/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/KonoShinsaku/.rvm/bin
 
 export PATH="/usr/local/bin":$PATH
 
@@ -225,7 +225,7 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 
-alias pass='sudo ruby /opt/pass/pass.rb'
+# alias pass='sudo ruby /opt/pass/pass.rb'
 
 PATH="/Users/KonoShinsaku/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/Users/KonoShinsaku/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
