@@ -190,7 +190,9 @@ export PATH="/usr/local/bin":$PATH
 export PATH="/usr/local/texlive/2016/bin/x86_64-darwin":$PATH
 
 # nvim
-export XDG_CONFIG_HOME=~/.config
+# export XDG_CONFIG_HOME=~/.config
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 
 # pyenv
 export PYENV_ROOT=/usr/local/var/pyenv
