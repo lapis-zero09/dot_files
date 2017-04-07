@@ -1,82 +1,87 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
-
+"dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath^=~/.vim/bundle/neobundle.vim/
+set runtimepath+=/Users/kounoshinsaku/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+if dein#load_state('/Users/kounoshinsaku/.cache/dein')
+  call dein#begin('/Users/kounoshinsaku/.cache/dein')
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundleFetch 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-    \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
-  \ },
-  \ }
-NeoBundle 'VimClojure'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 't9md/vim-textmanip'
+  " Let dein manage dein
+  " Required:
+  call dein#add('/Users/kounoshinsaku/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'andviro/flake8-vim'
-NeoBundle 'jmcantrell/vim-virtualenv'
-" NeoBundle 'hachibeeDI/python_hl_lvar.vim'
-NeoBundle 'hynek/vim-python-pep8-indent'
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('VimClojure')
+  call dein#add('Shougo/vimshell')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/neocomplcache')
+  call dein#add('jpalardy/vim-slime')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('Shougo/vimfiler.vim')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('t9md/vim-textmanip')
 
-NeoBundle 'hail2u/vim-css3-syntax'
-" NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'hokaccha/vim-html5validator'
-NeoBundle 'tell-k/vim-browsereload-mac'
-NeoBundle 'tyru/caw.vim.git'
+  call dein#add('Shougo/neomru.vim')
+  call dein#add('Shougo/unite-outline')
+  call dein#add('Shougo/neosnippet')
+  call dein#add('kana/vim-smartinput')
+  call dein#add('hynek/vim-python-pep8-indent')
+  call dein#add('andviro/flake8-vim')
+  call dein#add('jmcantrell/vim-virtualenv')
+  " call dein#add('hachibeeDI/python_hl_lvar.vim')
+  call dein#add('hynek/vim-python-pep8-indent')
 
-NeoBundle 'davidhalter/jedi-vim'
+  call dein#add('hail2u/vim-css3-syntax')
+  " call dein#add('taichouchou2/html5.vim')
+  call dein#add('hokaccha/vim-html5validator')
+  call dein#add('tell-k/vim-browsereload-mac')
+  call dein#add('tyru/caw.vim.git')
 
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'vim-scripts/AnsiEsc.vim'
-NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'tomasr/molokai'
+  call dein#add('davidhalter/jedi-vim')
 
-NeoBundle 'tpope/vim-rails'
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-rails')
+  call dein#add('tpope/vim-endwise')
+  call dein#add('tomtom/tcomment_vim')
+  call dein#add('nathanaelkane/vim-indent-guides')
+  call dein#add('vim-scripts/AnsiEsc.vim')
+  call dein#add('bronson/vim-trailing-whitespace')
+  call dein#add('ujihisa/unite-colorscheme')
+  call dein#add('tomasr/molokai')
 
-" rsense
-NeoBundle 'NigoroJr/rsense'
-" NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', {
-    " \ 'autoload' : { 'insert' : 1, 'filetype' : 'ruby', } }
+  call dein#add('tpope/vim-rails')
 
-call neobundle#end()
+  " rsense
+  call dein#add('NigoroJr/rsense')
+  " NeoBundleLazy 'supermomonga/neocomplete-rsense.vim', {
+      " \ 'autoload' : { 'insert' : 1, 'filetype' : 'ruby', } }
+
+
+  " You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
 " Required:
 filetype plugin indent on
+syntax enable
 
-NeoBundleCheck
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
 
 noremap <C-j> <esc>
 noremap! <C-j> <esc>
