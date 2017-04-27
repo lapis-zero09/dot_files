@@ -31,12 +31,12 @@ zstyle ':zle:*' word-style unspecified
 
 ########################################
 # 補完
+#for zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # 補完機能を有効にする
 autoload -Uz compinit
 compinit -u
-
-#for zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -119,15 +119,6 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
-alias gch='git checkout'
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit'
-alias gps='git push origin'
-alias gp='git pull'
-alias gm='git merge'
-
-
 alias la='ls -a'
 alias ll='ls -l'
 
@@ -157,10 +148,6 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
-
-
-export PATH="/usr/local/sbin:$PATH"
-
 ########################################
 # OS 別の設定
 case ${OSTYPE} in
@@ -176,23 +163,16 @@ case ${OSTYPE} in
 esac
 ########################################
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
 
 # PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/Users/KonoShinsaku/.rbenv/shims:/Users/KonoShinsaku/.rbenv/bin:/Users/KonoShinsaku/.rbenv/shims:/Users/KonoShinsaku/.rbenv/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/KonoShinsaku/.rvm/bin
 
-export PATH="/usr/local/bin":$PATH
-
 # tex
 # export PATH="/usr/local/texlive/2015/bin/x86_64-darwin":$PATH
 export PATH="/usr/local/texlive/2016/bin/x86_64-darwin":$PATH
-
-# nvim
-# export XDG_CONFIG_HOME=~/.config
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 
 # pyenv
 export PYENV_ROOT=/usr/local/var/pyenv

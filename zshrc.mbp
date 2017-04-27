@@ -119,15 +119,6 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
-alias gch='git checkout'
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit'
-alias gps='git push origin'
-alias gp='git pull'
-alias gm='git merge'
-
-
 alias la='ls -a'
 alias ll='ls -l'
 
@@ -203,5 +194,3 @@ function tmux_automatically_attach_session()
         echo "${fg_bold[red]} |_|  \_\_|\__,_|\___|_|\___/|_|  |_|_| |_| |_|\___| ${reset_color}"
 fi}
 tmux_automatically_attach_session
-
-
