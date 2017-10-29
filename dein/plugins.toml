@@ -1,0 +1,107 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+hook_add = '''
+    set background=dark
+'''
+
+[[plugins]]
+repo = 'tomasr/molokai'
+hook_add = '''
+   au MyAutoCmd VimEnter * nested colorscheme molokai
+'''
+
+# [[plugins]]
+# repo = 'sjl/badwolf'
+# hook_add = '''
+#    au MyAutoCmd VimEnter * nested colorscheme badwolf
+# '''
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+# [[plugins]]
+# repo = 'michalbachowski/vim-wombat256mod'
+# hook_add = '''
+#    au MyAutoCmd VimEnter * nested colorscheme wombat256mod
+# '''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme = 'badwolf'
+    let g:airline#extensions#virtualenv#enabled = 1
+    set laststatus=2
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+hook_add = '''
+    nmap <Leader>c <Plug>(caw:i:toggle)
+    vmap <Leader>c <Plug>(caw:i:toggle)
+'''
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    nnoremap <Space>f :NERDTreeToggle<CR>
+    let NERDTreeIgnore = ['\.pyc$']
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+    nnoremap [figitive] <Nop>
+    nnoremap <Leader>g [figitive]
+    nnoremap <silent> [figitive]s :<C-u>Gstatus<CR>
+    nnoremap <silent> [figitive]d :<C-u>Gdiff<CR>
+    nnoremap <silent> [figitive]b :<C-u>Gblame<CR>
+'''
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['vim-fugitive']
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+hook_add = '''
+    let g:netrw_nogx = 1 " disable netrw's gx mapping.
+    nmap <Leader>br <Plug>(openbrowser-smart-search)
+    vmap <Leader>br <Plug>(openbrowser-smart-search)
+'''
+
+[[plugins]]
+repo = 'mattn/benchvimrc-vim'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+hook_add = '''
+    nnoremap <silent> <Leader>w :FixWhitespace<CR>
+'''
+
+[[plugins]]
+repo = 'lambdalisue/vim-gista'
+hook_add = '''
+    let g:gista#client#default_username = 'lighttiger2505'
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype']
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+

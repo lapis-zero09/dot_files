@@ -1,0 +1,126 @@
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+if = "!has('nvim')"
+on_i = 1
+hook_source = '''
+    " setting
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_ignore_case = 1
+    let g:neocomplete#enable_smart_case = 1
+    if !exists('g:neocomplete#keyword_patterns')
+        let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns._ = '\h\w*'
+
+    " Ommi complete settings
+    let g:neocomplete#force_overwrite_completefunc = 1
+    autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+    if !exists('g:neocomplete#force_omni_input_patterns')
+        let g:neocomplete#force_omni_input_patterns = {}
+    endif
+    let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+    " Keybind
+    " Select
+    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+    " Decidet
+    inoremap <expr><CR>  pumvisible() ? neocomplete#close_popup() : "<CR>"
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = ['neosnippet-snippets']
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+if = "!has('nvim')"
+on_cmd = 'Unite'
+depends = ['neomru.vim']
+"hook_add = '''
+"    " Prefix key
+"    nnoremap [unite] <Nop>
+"    nmap <Space>u [unite]
+"
+"    " Keymap
+"    " Current direcotry files
+"    nnoremap <silent> [unite]p :<C-u>Unite<Space>file_rec/async:!<CR>
+"    " Buffer files
+"    nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+"    " Grep files
+"    nnoremap <silent> [unite]g :<C-u>Unite<Space>grep -buffer-name=search -auto-preview -no-quit -no-empty -resume<CR>
+"    " Recent files
+"    nnoremap <silent> [unite]r :<C-u>Unite file_mru buffer<CR>
+"    " Yank history
+"    nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR>
+"
+"    " Options
+"    let g:unite_enable_start_insert=1
+"    let g:unite_winheight = 20
+"    let g:unite_source_history_yank_enable =1
+"    let g:unite_source_file_mru_limit = 200
+"    let g:unite_split_rule = 'topleft'
+"'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+depends = ['vimproc.vim', 'shabadou.vim']
+on_ft = ['python']
+hook_source = '''
+    " Running vimproc
+    " Showing success is buffer and error is quickfix
+    let g:quickrun_config = {
+        \ '_' : {
+            \ 'runner' : 'vimproc',
+            \ 'runner/vimproc/updatetime' : 40,
+            \ 'outputter' : 'error',
+            \ 'outputter/error/success' : 'buffer',
+            \ 'outputter/error/error'   : 'quickfix',
+            \ 'outputter/buffer/split' : ':botright 8sp',
+        \ }
+    \}
+
+    " Close quickfix is [q]
+    au FileType qf nnoremap <silent><buffer>q :quit<CR>
+
+    " Keymap
+    let g:quickrun_no_default_key_mappings = 1
+    " Running with close quickfix and save file
+    nnoremap <Leader>r :cclose<CR>:write<CR>:QuickRun -mode n<CR>
+    xnoremap <Leader>r :<C-U>cclose<CR>:write<CR>gv:QuickRun -mode v<CR>
+
+    " Stop quickrun is [C-c]
+    nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+'''
+
+[[plugins]]
+repo = 'neomake/neomake'
+on_ft = ['python']
+hook_source = '''
+    autocmd! BufEnter,BufWritePost * Neomake
+    let g:neomake_python_enabled_makers = ['python', 'flake8']
+'''
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+on_cmd = 'EasyAlign'
+hook_add = '''
+    nmap ga <Plug>(EasyAlign)
+    xmap ga <Plug>(EasyAlign)
+'''
+
+[[plugins]] # Codic
+repo = 'koron/codic-vim'
+on_cmd = 'Codic'
+
+
