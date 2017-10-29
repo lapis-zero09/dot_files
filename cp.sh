@@ -6,4 +6,3 @@ cp -r ~/.config/dein .
 cp -r ~/.config/nvim .
 cp -r ~/.config/zsh .
 
-# git commit -a
