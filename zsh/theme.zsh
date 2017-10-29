@@ -217,7 +217,6 @@ build_prompt() {
   for arrow_color in $arrow_colors; do
     echo -n "%F{$arrow_color}»%f"
   done
-  echo -n ' '
 }
 setopt prompt_subst
 PROMPT='%{%f%b%k%}$(build_prompt) '
