@@ -10,3 +10,5 @@ source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/options.zsh
 source ~/.config/zsh/theme.zsh
 source ~/.config/zsh/zplug.zsh
+source ~/.config/zsh/path.zsh
+
