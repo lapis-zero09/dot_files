@@ -102,3 +102,5 @@ if has('autocmd')
 endif
 
 
+" 行間移動
+set whichwrap=b,s,<,>,[,]
