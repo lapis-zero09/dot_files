@@ -12,6 +12,7 @@ alias -g L='| less'
 alias -g G='| grep'
 
 alias vim='nvim'
+alias vi='nvim'
 
 # OS 別の設定
 case ${OSTYPE} in
