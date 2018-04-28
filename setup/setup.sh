@@ -20,5 +20,5 @@ if ! type brew > /dev/null 2&>1; then
 
 
 if ! type apm > /dev/null 2&>1; then
-    brew cask install atom slack notion spotify mendeley firefox google-chrome docker
+    brew cask install atom slack notion spotify mendeley firefox google-chrome docker basictex
 end
