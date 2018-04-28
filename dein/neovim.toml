@@ -43,4 +43,3 @@ hook_add = '''
 repo = 'Shougo/neoyank.vim'
 depends = 'denite.nvim'
 on_event = 'TextYankPost'
-

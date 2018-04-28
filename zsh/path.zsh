@@ -10,3 +10,8 @@ if [[ `uname` == 'Linux' ]]; then
   export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
 fi
+
+if [[ `uname` == 'Darwin' ]]; then
+  eval "$(rbenv init -)"
+  eval "$(pyenv init -)"
+fi
