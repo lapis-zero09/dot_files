@@ -20,10 +20,25 @@ fi
 
 if ! type apm > /dev/null 2&>1; then
     brew install curl wget git tmux zsh nvim docker pyenv rbenv ruby-build powerline ghq
-    brew cask install atom slack notion spotify mendeley firefox google-chrome docker basictex
+    brew cask install atom slack notion spotify mendeley firefox google-chrome docker
     brew tap sanemat/font
     brew install ricty --patch-in-place --powerline --vim-powerline
     cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
     fc-cache -vf
     git config --global ghq.root ~/Documents
+fi
+
+
+
+# tex configuration
+brew cask install basictex
+sudo tlmgr update --self --all
+sudo tlmgr install uplatex latexmk collection-langjapanese
+sudo tlmgr install algorithmicx
+sudo tlmgr install algorithms
+if [[ `uname` == 'Darwin' ]]; then
+    cd /usr/local/texlive/2017basic/texmf-dist/scripts/cjk-gs-integrate
+    sudo perl cjk-gs-integrate.pl --link-texmf --force
+    sudo mktexlsr
+    sudo kanji-config-updmap-sys hiragino-elcapitan-pron
 fi
