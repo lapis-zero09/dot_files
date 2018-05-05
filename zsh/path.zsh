@@ -13,5 +13,7 @@ fi
 
 if [[ `uname` == 'Darwin' ]]; then
   eval "$(rbenv init -)"
-  eval "$(pyenv init -)"
+  # eval "$(pyenv init -)"
+  # added by Anaconda3 installer
+  export PATH="/Users/lapis/anaconda3/bin:$PATH"
 fi

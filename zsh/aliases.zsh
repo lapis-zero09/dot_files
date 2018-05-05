@@ -14,6 +14,10 @@ alias -g G='| grep'
 alias vim='nvim'
 alias vi='nvim'
 
+alias ghqget='ghq get -p'
+
+alias maketex='(){ latexmk -pvc $1 --output-directory=out}'
+
 # OS 別の設定
 case ${OSTYPE} in
     darwin*)
