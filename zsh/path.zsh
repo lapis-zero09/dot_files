@@ -16,4 +16,10 @@ if [[ `uname` == 'Darwin' ]]; then
   # eval "$(pyenv init -)"
   # added by Anaconda3 installer
   export PATH="/Users/lapis/anaconda3/bin:$PATH"
+
+  # Go lang
+  export PATH="$HOME/.goenv/bin:$PATH"
+  export GOPATH="$HOME/go"
+  export PATH="$GOPATH/bin:$PATH"
+  eval "$(goenv init -)"
 fi
