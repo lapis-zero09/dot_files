@@ -12,12 +12,18 @@ if [[ `uname` == 'Linux' ]]; then
 fi
 
 if [[ `uname` == 'Darwin' ]]; then
+  # ruby
   eval "$(rbenv init -)"
+
+  # node
+  eval "$(ndenv init -)"
+
+  # python
   # eval "$(pyenv init -)"
   # added by Anaconda3 installer
   export PATH="/Users/lapis/anaconda3/bin:$PATH"
 
-  # Go lang
+  # golang
   export PATH="$HOME/.goenv/bin:$PATH"
   export GOPATH="$HOME/go"
   export PATH="$GOPATH/bin:$PATH"
