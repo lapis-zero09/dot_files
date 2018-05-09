@@ -16,6 +16,7 @@ if [[ `uname` == 'Darwin' ]]; then
   eval "$(rbenv init -)"
 
   # node
+  export PATH="${HOME}/.ndenv/bin:${PATH}"
   eval "$(ndenv init -)"
 
   # python
