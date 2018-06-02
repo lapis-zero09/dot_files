@@ -14,8 +14,11 @@ alias -g G='| grep'
 alias vim='nvim'
 alias vi='nvim'
 
-
 alias maketex='(){ latexmk -pvc $1 --output-directory=out}'
+
+if [[ `hostname` == 'VMax.local' ]]; then
+    alias nvidia-smi='(){ watch -c -d -n $1 cuda-smi }'
+fi
 
 # OS 別の設定
 case ${OSTYPE} in

@@ -19,14 +19,23 @@ if [[ `uname` == 'Darwin' ]]; then
   export PATH="${HOME}/.ndenv/bin:${PATH}"
   eval "$(ndenv init -)"
 
-  # python
-  # eval "$(pyenv init -)"
-  # added by Anaconda3 installer
-  export PATH="/Users/lapis/anaconda3/bin:$PATH"
-
   # golang
   export PATH="$HOME/.goenv/bin:$PATH"
   export GOPATH="$HOME/go"
   export PATH="$GOPATH/bin:$PATH"
   eval "$(goenv init -)"
+
+  if [[ `hostname` == 'VMax.local' ]]; then
+    # added by Anaconda3 installer
+    export PATH="/Users/lapis/anaconda3/bin:$PATH"
+    export CUDA_HOME=/usr/local/cuda
+    export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:/usr/local/cuda/extras/CUPTI/lib
+    export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
+    export PATH=$DYLD_LIBRARY_PATH:$PATH
+
+    export PATH="${HOME}/Documents/github.com/phvu/cuda-smi:$PATH"
+  else
+    # python
+    eval "$(pyenv init -)"
+  fi
 fi
