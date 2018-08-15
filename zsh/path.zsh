@@ -13,7 +13,9 @@ fi
 
 if [[ `uname` == 'Darwin' ]]; then
   # ruby
+  export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
+
 
   # node
   export PATH="${HOME}/.ndenv/bin:${PATH}"
