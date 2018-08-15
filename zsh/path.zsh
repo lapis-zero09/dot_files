@@ -26,11 +26,7 @@ if [[ `uname` == 'Darwin' ]]; then
   export PATH="$GOPATH/bin:$PATH"
   eval "$(goenv init -)"
 
-  # The next line updates PATH for the Google Cloud SDK.
-  if [ -f '/Users/lapis/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/lapis/google-cloud-sdk/path.zsh.inc'; fi
-
-  # The next line enables shell command completion for gcloud.
-  if [ -f '/Users/lapis/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/lapis/google-cloud-sdk/completion.zsh.inc'; fi
+  eval $(thefuck --alias)
 
   if [[ `hostname` == 'VMax.local' ]]; then
     # added by Anaconda3 installer
@@ -40,7 +36,11 @@ if [[ `uname` == 'Darwin' ]]; then
     export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
     export PATH=$DYLD_LIBRARY_PATH:$PATH
 
-    eval $(thefuck --alias)
+    # The next line updates PATH for the Google Cloud SDK.
+    if [ -f '/Users/lapis/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/lapis/google-cloud-sdk/path.zsh.inc'; fi
+    # The next line enables shell command completion for gcloud.
+    if [ -f '/Users/lapis/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/lapis/google-cloud-sdk/completion.zsh.inc'; fi
+
     export PATH="${HOME}/Documents/github.com/phvu/cuda-smi:$PATH"
   else
     # python
