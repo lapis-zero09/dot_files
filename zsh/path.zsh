@@ -16,7 +16,6 @@ if [[ `uname` == 'Darwin' ]]; then
   export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
 
-
   # node
   export PATH="${HOME}/.ndenv/bin:${PATH}"
   eval "$(ndenv init -)"
@@ -27,6 +26,12 @@ if [[ `uname` == 'Darwin' ]]; then
   export PATH="$GOPATH/bin:$PATH"
   eval "$(goenv init -)"
 
+  # The next line updates PATH for the Google Cloud SDK.
+  if [ -f '/Users/lapis/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/lapis/google-cloud-sdk/path.zsh.inc'; fi
+
+  # The next line enables shell command completion for gcloud.
+  if [ -f '/Users/lapis/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/lapis/google-cloud-sdk/completion.zsh.inc'; fi
+
   if [[ `hostname` == 'VMax.local' ]]; then
     # added by Anaconda3 installer
     export PATH="/Users/lapis/anaconda3/bin:$PATH"
@@ -35,6 +40,7 @@ if [[ `uname` == 'Darwin' ]]; then
     export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
     export PATH=$DYLD_LIBRARY_PATH:$PATH
 
+    eval $(thefuck --alias)
     export PATH="${HOME}/Documents/github.com/phvu/cuda-smi:$PATH"
   else
     # python
