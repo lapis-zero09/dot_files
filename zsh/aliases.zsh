@@ -14,7 +14,17 @@ alias -g G='| grep'
 alias vim='nvim'
 alias vi='nvim'
 
+alias cat='ccat'
+
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
+
 alias maketex='(){ latexmk -pvc $1 --output-directory=out}'
+eval $(thefuck --alias)
+
 
 if [[ `hostname` == 'VMax.local' ]]; then
     alias nvidia-smi='(){ watch -c -d -n $1 cuda-smi }'

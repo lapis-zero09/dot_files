@@ -36,8 +36,16 @@ if [[ `uname` == 'Darwin' ]]; then
     export PATH=$DYLD_LIBRARY_PATH:$PATH
 
     export PATH="${HOME}/Documents/github.com/phvu/cuda-smi:$PATH"
-  else
+  fi
+
+  if [[ `hostname` == 'CA3447.local' ]]; then
     # python
     eval "$(pyenv init -)"
+    export PATH="/Users/01024162/.pyenv/versions/anaconda3-5.1.0/bin/:$PATH"
+    # The next line updates PATH for the Google Cloud SDK.
+    if [ -f '/Users/01024162/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/01024162/google-cloud-sdk/path.zsh.inc'; fi
+
+    # The next line enables shell command completion for gcloud.
+    if [ -f '/Users/01024162/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/01024162/google-cloud-sdk/completion.zsh.inc'; fi
   fi
 fi
