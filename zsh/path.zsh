@@ -27,6 +27,9 @@ if [[ `uname` == 'Darwin' ]]; then
   eval "$(goenv init -)"
 
   eval $(thefuck --alias)
+  export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
+  alias telnet=/usr/local/bin/telnet
+  eval "$(direnv hook zsh)"
 
   if [[ `hostname` == 'VMax.local' ]]; then
     # added by Anaconda3 installer
@@ -45,13 +48,6 @@ if [[ `uname` == 'Darwin' ]]; then
   fi
 
   if [[ `hostname` == 'CA3447.local' ]]; then
-    # python
-    eval "$(pyenv init -)"
-    export PATH="/Users/01024162/.pyenv/versions/anaconda3-5.1.0/bin/:$PATH"
-    # The next line updates PATH for the Google Cloud SDK.
-    if [ -f '/Users/01024162/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/01024162/google-cloud-sdk/path.zsh.inc'; fi
-
-    # The next line enables shell command completion for gcloud.
-    if [ -f '/Users/01024162/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/01024162/google-cloud-sdk/completion.zsh.inc'; fi
+    export PATH="/usr/local/anaconda3/bin:$PATH"
   fi
 fi
