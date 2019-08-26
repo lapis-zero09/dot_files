@@ -141,8 +141,6 @@ cask xquartz
 
 # App Store applications
 appstore 549083868 Display Menu (2.2.3)
-appstore 682658836 GarageBand (10.3.2)
-appstore 408981434 iMovie (10.1.9)
 appstore 409183694 Keynote (9.1)
 appstore 539883307 LINE (5.16.0)
 appstore 409203825 Numbers (6.1)
