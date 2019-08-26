@@ -1,0 +1,176 @@
+
+# Other Homebrew packages
+brew argo
+brew autoconf
+brew bat
+brew brew-file
+brew cairo
+brew ccat
+brew colordiff
+brew curl
+brew dep
+brew direnv
+brew docker
+brew fontconfig
+brew fontforge
+brew freetype
+brew fribidi
+brew fzf
+brew gd
+brew gdbm
+brew gettext
+brew ghostscript
+brew ghq
+brew gibo
+brew giflib
+brew git
+brew git-flow
+brew glances
+brew glib
+brew gmp
+brew gnutls
+brew go
+brew gobject-introspection
+brew goenv
+brew graphite2
+brew graphviz
+brew gts
+brew harfbuzz
+brew htop
+brew icu4c
+brew ilmbase
+brew imagemagick
+brew imagemagick@6
+brew inetutils
+brew jasper
+brew jemalloc
+brew jpeg
+brew jq
+brew kubernetes-cli
+brew kubernetes-helm
+brew libde265
+brew libevent
+brew libffi
+brew libgcrypt
+brew libgpg-error
+brew libheif
+brew libidn
+brew libidn2
+brew libomp
+brew libpng
+brew libspiro
+brew libtasn1
+brew libtermkey
+brew libtiff
+brew libtool
+brew libuninameslist
+brew libunistring
+brew libuv
+brew libvterm
+brew libxml2
+brew libxmlsec1
+brew libyaml
+brew little-cms2
+brew lua
+brew luajit
+brew lzo
+brew mas
+brew mecab
+brew mecab-ipadic
+brew msgpack
+brew mysql
+brew ncurses
+brew ndenv
+brew neovim
+brew netpbm
+brew nettle
+brew nkf
+brew node-build
+brew nspr
+brew nss
+brew oath-toolkit
+brew oniguruma
+brew openexr
+brew openjpeg
+brew openssl
+brew p11-kit
+brew p7zip
+brew pango
+brew pcre
+brew pcre2
+brew pdf2svg
+brew perl
+brew pixman
+brew pkg-config
+brew poppler
+brew pstree
+brew python
+brew python@2
+brew qt
+brew rbenv
+brew rbenv-gemset
+brew readline
+brew reattach-to-user-namespace
+brew redis
+brew ricty --with-powerline --with-patch-in-place
+brew ruby
+brew ruby-build
+brew shared-mime-info
+brew sqlite
+brew sqlmap
+brew telnet
+brew terraform
+brew thefuck
+brew tmux
+brew tree
+brew unbound
+brew unibilium
+brew vim
+brew watch
+brew watchman
+brew webp
+brew wget
+brew x265
+brew xz
+brew z
+brew zsh
+
+# Other Cask applications
+cask alfred
+cask anaconda
+cask android-studio
+cask atom
+cask burp-suite
+cask dash
+cask docker
+cask figma
+cask firefox
+cask font-fira-code
+cask gephi
+cask google-chrome
+cask google-cloud-sdk
+cask hammerspoon
+cask java
+cask mendeley
+cask ngrok
+cask notion
+cask postman
+cask react-native-debugger
+cask slack
+cask spotify
+cask virtualbox
+cask virtualbox-extension-pack
+cask visual-studio-code
+cask xmind
+cask xquartz
+
+# App Store applications
+appstore 549083868 Display Menu (2.2.3)
+appstore 682658836 GarageBand (10.3.2)
+appstore 408981434 iMovie (10.1.9)
+appstore 409183694 Keynote (9.1)
+appstore 539883307 LINE (5.16.0)
+appstore 409203825 Numbers (6.1)
+appstore 409201541 Pages (8.1)
+appstore 1429033973 RunCat (4.6)
+appstore 497799835 Xcode (9.3)

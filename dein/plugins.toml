@@ -42,6 +42,31 @@ hook_add = '''
 repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+#[[plugins]]
+#repo = 'itchyny/lightline.vim'
+#hook_add = '''
+#    let g:lightline = {
+#            \ 'colorscheme': 'badwolf',
+#            \ 'active': {
+#            \   'left': [ [ 'mode', 'paste' ],
+#            \             [ 'fugitive', 'filename' ] ]
+#            \ },
+#            \ 'component_function': {
+#            \   'fugitive': 'LightLineFugitive',
+#            \   'readonly': 'LightLineReadonly',
+#            \   'modified': 'LightLineModified',
+#            \   'filename': 'LightLineFilename',
+#            \   'filetype': 'LightLineFiletype',
+#            \   'fileformat': 'LightLineFileformat',
+#             \ },
+#            \ 'separator': { 'left': '>', 'right': '<' },
+#            \ 'subseparator': { 'left': '>', 'right': '<' }
+#            \ }
+#'''
+
+[[plugins]]
 repo = 'tpope/vim-surround'
 
 [[plugins]]

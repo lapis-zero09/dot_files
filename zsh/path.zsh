@@ -28,8 +28,33 @@ if [[ `uname` == 'Darwin' ]]; then
   export PATH="$GOPATH/bin:$PATH"
   eval "$(goenv init -)"
 
+
+  eval $(thefuck --alias)
+  export PATH="/usr/local/opt/inetutils/libexec/gnubin:$PATH"
+  alias telnet=/usr/local/bin/telnet
+  eval "$(direnv hook zsh)"
+
+  if [[ `hostname` == 'shinsk.local' ]]; then
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+  fi
+
   if [[ `hostname` == 'CA4004.local' ]]; then
-    export PATH="/anaconda3/bin:$PATH"
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+
     source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
     source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
   fi
@@ -51,13 +76,21 @@ if [[ `uname` == 'Darwin' ]]; then
   fi
 
   if [[ `hostname` == 'CA3447.local' ]]; then
-    # python
-    eval "$(pyenv init -)"
-    export PATH="/Users/01024162/.pyenv/versions/anaconda3-5.1.0/bin/:$PATH"
-    # The next line updates PATH for the Google Cloud SDK.
-    if [ -f '/Users/01024162/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/01024162/google-cloud-sdk/path.zsh.inc'; fi
-
-    # The next line enables shell command completion for gcloud.
-    if [ -f '/Users/01024162/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/01024162/google-cloud-sdk/completion.zsh.inc'; fi
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/usr/local/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/usr/local/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
   fi
 fi

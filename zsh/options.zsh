@@ -49,8 +49,8 @@ fi
 
 
 # 補完機能を有効にする
-autoload -Uz compinit
-compinit -u
+# autoload -Uz compinit
+# compinit -u
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'

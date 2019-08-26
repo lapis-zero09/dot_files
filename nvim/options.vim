@@ -1,3 +1,4 @@
+let g:Powerline_symbols = 'fancy'
 
 " File encoding
 if !exists ('g:encoding_set') || !has('nvim')
