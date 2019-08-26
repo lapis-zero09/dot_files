@@ -2,13 +2,13 @@
 # Other Homebrew packages
 brew argo
 brew autoconf
+brew axel
 brew bat
 brew brew-file
 brew cairo
 brew ccat
 brew colordiff
 brew curl
-brew dep
 brew direnv
 brew docker
 brew fontconfig
@@ -19,18 +19,11 @@ brew fzf
 brew gd
 brew gdbm
 brew gettext
-brew ghostscript
 brew ghq
 brew gibo
 brew giflib
 brew git
-brew git-flow
-brew glances
 brew glib
-brew gmp
-brew gnutls
-brew go
-brew gobject-introspection
 brew goenv
 brew graphite2
 brew graphviz
@@ -38,11 +31,7 @@ brew gts
 brew harfbuzz
 brew htop
 brew icu4c
-brew ilmbase
-brew imagemagick
-brew imagemagick@6
 brew inetutils
-brew jasper
 brew jemalloc
 brew jpeg
 brew jq
@@ -106,18 +95,14 @@ brew poppler
 brew pstree
 brew python
 brew python@2
-brew qt
 brew rbenv
 brew rbenv-gemset
 brew readline
 brew reattach-to-user-namespace
 brew redis
-brew ricty --with-powerline --with-patch-in-place
-brew ruby
+brew ricty --with-powerline
 brew ruby-build
-brew shared-mime-info
 brew sqlite
-brew sqlmap
 brew telnet
 brew terraform
 brew thefuck
@@ -125,10 +110,7 @@ brew tmux
 brew tree
 brew unbound
 brew unibilium
-brew vim
 brew watch
-brew watchman
-brew webp
 brew wget
 brew x265
 brew xz
@@ -138,28 +120,21 @@ brew zsh
 # Other Cask applications
 cask alfred
 cask anaconda
-cask android-studio
-cask atom
-cask burp-suite
-cask dash
 cask docker
-cask figma
 cask firefox
 cask font-fira-code
 cask gephi
 cask google-chrome
 cask google-cloud-sdk
 cask hammerspoon
-cask java
 cask mendeley
+cask microsoft-teams
+cask minikube
 cask ngrok
 cask notion
 cask postman
-cask react-native-debugger
 cask slack
 cask spotify
-cask virtualbox
-cask virtualbox-extension-pack
 cask visual-studio-code
 cask xmind
 cask xquartz
