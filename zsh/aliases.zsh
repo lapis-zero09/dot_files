@@ -24,7 +24,7 @@ fi
 
 alias maketex='(){ latexmk -pvc $1 --output-directory=out}'
 eval $(thefuck --alias)
-alias go=richgo
+alias go='richgo'
 
 if [[ `hostname` == 'VMax.local' ]]; then
     alias nvidia-smi='(){ watch -c -d -n $1 cuda-smi }'

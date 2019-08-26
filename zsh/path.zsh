@@ -19,6 +19,8 @@ if [[ `uname` == 'Darwin' ]]; then
   # node
   export PATH="${HOME}/.ndenv/bin:${PATH}"
   eval "$(ndenv init -)"
+  export PATH=$HOME/.nodebrew/current/bin:$PATH
+  export PATH=$PATH:./node_modules/.bin
 
   # golang
   export PATH="$HOME/.goenv/bin:$PATH"
@@ -26,7 +28,11 @@ if [[ `uname` == 'Darwin' ]]; then
   export PATH="$GOPATH/bin:$PATH"
   eval "$(goenv init -)"
 
-  eval $(thefuck --alias)
+  if [[ `hostname` == 'CA4004.local' ]]; then
+    export PATH="/anaconda3/bin:$PATH"
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+    source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+  fi
 
   if [[ `hostname` == 'VMax.local' ]]; then
     # added by Anaconda3 installer

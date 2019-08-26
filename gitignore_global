@@ -46,9 +46,9 @@ target/
 
 # OS generated files #
 ######################
-.DS_Store*
+.DS_Store
 ehthumbs.db
 Icon?
 Thumbs.db
 .ipynb_checkpoints
-
+.vscode
