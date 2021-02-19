@@ -1,5 +1,7 @@
-source ~/.zplug/init.zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+export ZPLUG_HOME=~/.zplug
+source $ZPLUG_HOME/init.zsh
+
+#zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # zplug 'prikhi/molokai-powerline-zsh', as:theme
 # zplug 'simnalamburt/shellder', as:theme
@@ -28,10 +30,11 @@ zplug "lapis-zero09/0120963f277cc1e9b713c4ea6da437a0", from:gist # tree-fzf.zsh
 zplug "rupa/z", use:"*.sh"
 zplug "b4b4r07/gist", from:gh-r, as:command, use:"*darwin*amd64*"
 
-# if ! zplug check --verbose; then
-#     printf "Install? [y/N]: "
-#     if read -q; then
-#         echo; zplug install
-#     fi
-# fi
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 zplug load
+

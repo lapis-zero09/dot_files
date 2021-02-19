@@ -40,9 +40,13 @@ if [[ `uname` == 'Darwin' ]]; then
   fi
 
   if [[ `hostname` == 'CA4004.local' ]]; then
+
+    # added by Anaconda3 5.2.0 installer
+    # export PATH="/anaconda3/bin:$PATH"  # commented out by conda initialize
+    export PATH="/anaconda3/bin:$PATH"
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    __conda_setup="$('/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
     else

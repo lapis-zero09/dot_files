@@ -42,3 +42,6 @@ case ${OSTYPE} in
         alias ls='ls -F --color=auto'
         ;;
 esac
+
+alias gbrm='git branch --merged master | grep -v "*" | xargs git branch -d'
+
