@@ -1,0 +1,75 @@
+shell = "zsh"
+
+apply = ["defer"]
+
+[plugins]
+
+[plugins.zsh-defer]
+apply = ["source"]
+github = "romkatv/zsh-defer"
+
+[plugins.compinit]
+inline = 'autoload -Uz compinit && zsh-defer compinit'
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+[plugins.zsh-256color]
+github = "chrissicool/zsh-256color"
+
+[plugins.git-alias]
+remote = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/git/git.plugin.zsh"
+
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+
+[plugins."z.lua"]
+github = "skywind3000/z.lua"
+
+[plugins."z.lua".hooks]
+post = "export _ZL_MATCH_MODE=1"
+
+[plugins.fzf]
+apply = ['fzf-install', 'fzf-source']
+github = "junegunn/fzf"
+
+[plugins.fzf.hooks]
+pre = 'export FZF_DEFAULT_OPTS = "--height 40% --reverse"'
+
+[plugins.fzf-ghq]
+gist = "lapis-zero09/5b202bbff8f15826ff2cc9e2d36a6efa"
+
+[plugins.fzf-history]
+gist = "lapis-zero09/51d3d15503f07960eb2938ee1b38c2e6"
+
+[plugins.fzf-ssh]
+gist = "lapis-zero09/062dd16d8758c77359f21bb0d2470ee7"
+
+[plugins.fzf-git-branch]
+gist = "lapis-zero09/c4c8b5e81b42547b8ed8162134b3c1e7"
+
+[plugins.fzf-tree]
+gist = "lapis-zero09/0120963f277cc1e9b713c4ea6da437a0"
+
+[plugins.enhancd]
+github = "b4b4r07/enhancd"
+
+[plugins.enhancd.hooks]
+post = 'export ENHANCD_HOOK_AFTER_CD = "ls"'
+pre = 'export ENHANCD_FILTER = "fzf --height 40%:fzy"'
+
+[plugins.aws_zsh_completer]
+remote = "https://raw.githubusercontent.com/aws/aws-cli/v2/bin/aws_zsh_completer.sh"
+
+[templates]
+PATH = 'export PATH="$PATH:{{ dir }}"'
+defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
+fzf-install = "{{ dir }}/install --bin > /dev/null \n[[ ! $PATH =~ {{ dir }} ]] && export PATH=\"$PATH:{{ dir }}/bin\"\n"
+fzf-source = "{% for file in files %}source \"{{ file }}\"\n{% endfor %}"
