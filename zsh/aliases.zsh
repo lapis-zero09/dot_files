@@ -26,10 +26,6 @@ alias maketex='(){ latexmk -pvc $1 --output-directory=out}'
 eval $(thefuck --alias)
 alias go='richgo'
 
-if [[ `hostname` == 'VMax.local' ]]; then
-    alias nvidia-smi='(){ watch -c -d -n $1 cuda-smi }'
-fi
-
 # OS 別の設定
 case ${OSTYPE} in
     darwin*)
@@ -43,5 +39,5 @@ case ${OSTYPE} in
         ;;
 esac
 
-alias gbrm='git branch --merged master | grep -v "*" | xargs git branch -d'
+alias gbrm='git branch --merged main | grep -v "*" | xargs git branch -d'
 
